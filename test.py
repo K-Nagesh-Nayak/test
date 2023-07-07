@@ -1,0 +1,34 @@
+# https://youtu.be/jXx3acg34S0
+
+import turtle
+
+wn=turtle.Screen()
+wn.title("TEST GAME")
+wn.bgcolor("black")
+
+wn.register_shape("D:\learn py\game\cookie.gif")
+cookie=turtle.Turtle()
+cookie.shape("D:\learn py\game\cookie.gif")
+cookie.speed(0)
+
+clicks=0
+
+pen=turtle.Turtle()
+pen.hideturtle()
+pen.color("white")
+pen.penup()
+pen.goto(0,90)
+pen.write(f" Clicks:{clicks}",align="center",font=("Courier New ",32,"normal"))
+
+def clicked(x,y):
+    global clicks
+    clicks +=1
+    pen.clear()
+    pen.write(f" Clicks:{clicks}",align="center",font=("Courier New ",32,"normal"))
+
+
+cookie.onclick(clicked)
+          
+
+
+wn.mainloop()
